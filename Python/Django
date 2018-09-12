@@ -1,1 +1,23 @@
+Django
 
+1.环境搭建---创建虚拟环境：
+  pip install virtualenv
+  创建：virtualenv env_myenvname_version
+  激活：env_myenvname_version\scripts\activate
+  
+2.创建Django项目：
+  创建：django-admin startproject project_name
+  目录结构：
+  project_name/     => 项目的容器，名称可自定义。
+    manage.py       => 是一个命令行实用脚本，可以通过不同的方式与 Django 项目交互。
+    project_name/   => 项目的 Python 包。
+      __init__.py   => 包的标识。
+      settings.py   => 项目配置。
+      urls.py       => 项目的 URL 声明，即 Django 驱动的网站的“目录”。
+      wsgi.py       => 是兼容 WSGI 的 Web 服务器的入口点，用于伺服项目。
+      
+3.启动开发服务器：
+  python manage.py runserver 0.0.0.0:8000
+  0.0.0.0代表其他设备可以连接到开发服务器。
+  
+4.
