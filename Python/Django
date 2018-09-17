@@ -20,4 +20,10 @@ Django
   python manage.py runserver 0.0.0.0:8000
   0.0.0.0代表其他设备可以连接到开发服务器。
   
-4.
+4.Django请求流程：
+  4.1.请求指定的url，
+  4.2.django查找settings.ROOT_URLCONF，找到根URL配置，
+  4.3.django顺序比较配置中的url模式，
+  4.4.如果找到匹配的模式，调用对应的视图函数，
+  4.5.视图函数return HttpResponse对象，
+  4.6.django把HttpResponse对象转换成HTTP响应，得到网页。
