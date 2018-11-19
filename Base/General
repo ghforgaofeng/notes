@@ -1,1 +1,38 @@
+1.Python安装问题：
+  xxx is not a supported wheel on this platform
+  cd python_shell
+  import pip
+  print(pip.pep425tags.get_supported())
+  [('cp27', 'none', 'win_amd64'), ('cp27', 'none', 'any'), ('cp2', 'none', 'any'),
+   ('cp26', 'none', 'any'), ('cp25', 'none', 'any'), ('cp24', 'none', 'any'), ('cp
+  23', 'none', 'any'), ('cp22', 'none', 'any'), ('cp21', 'none', 'any'), ('cp20',
+  'none', 'any'), ('py27', 'none', 'any'), ('py2', 'none', 'any'), ('py26', 'none'
+  , 'any'), ('py25', 'none', 'any'), ('py24', 'none', 'any'), ('py23', 'none', 'an
+  y'), ('py22', 'none', 'any'), ('py21', 'none', 'any'), ('py20', 'none', 'any')]
 
+2.setlocal DISABLEDELAYEDEXPANSION:用于开启变量延迟，这是告诉解释器，在遇到复合语句的时候，不要将其作为一条语句同时处理，而仍然一条一条地去解释。
+  但是这时必须用!str!来引用变量，如果仍然用%str%引用是不起作用的。
+  setlocal enabledelayedexpansion:关闭变量延迟。
+
+3.%~dp0:脚本所在的目录。
+
+4.DIRECTORY_SEPARATOR：php表示目录分隔符，取操作系统对应的‘linux：/’或‘windows：\’。
+
+5.X-Subject-Token：从response头获取，
+  X-Auth-Token：在request头中使用，
+  这两的值是一个东西，只是作用位置不一样。
+
+6.:n,$s/test//
+  //n可以取1，表示从第一行开始删除含有test
+
+7.vim跳行 => n为指定的行号：
+  1. ngg / nG
+  2. :n
+  3. vim +n filename（注意这里要输入 + 号）
+  三者的区别在于，ngg/nG输入以后不需要按下回车键，而输入:n之后还要按下回车键才会跳转，vim +n filename只能在打开文件时跳转到相应的行。
+
+8.eval()：		将字符串str当成有效的Python表达式来执行，
+  exec()：		将字符串str当成有效的Python代码来执行，
+  execfile()：	将字符串str当成有效的Python文件来执行。
+
+9.
