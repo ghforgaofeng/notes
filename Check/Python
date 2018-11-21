@@ -1,1 +1,42 @@
+1.B extends A，如何调用父类方法？
+  a.代码中：super(B, obj_B).method(arg)
+    子类中：super().method(arg)
+  b.obj_B.__class__ = A
+    obj_B.method(arg)
+  c.原则：新式类(广度优先)，老式类(深度优先)
 
+2.class A(object):
+  ...
+  以下操作意义为：调用A.__call__()
+  a = A()
+  a(arg)
+
+3.__new__() and __init__的区别：
+  __new__()：构造器，创建一个类的实例
+  __init__()：初始化器，初始化一个已经被创建的实例
+
+4.Python要使用作用域以外的变量需加global做标注
+
+5.交换两变量的值：(a, b) = (b, a)
+
+6.默认方法：当调用未定义的方法时，实际应该执行__getattr__()
+
+7.一个包里有三个模块，mod1.py，mod2.py，mod3.py，但使用from demopack import *导入模块时，如何保证只有mod1，mod3被导入了？
+  在demopack包下的__init__.py中增加：__all__ = ['mod1', 'mod3']
+
+8.闭包：
+  def outer(num):
+      def inner(val):
+          return num * val
+      return inner
+
+  fx = outer(7)
+  print(fx(9))
+
+  要创建闭包，必须满足以下条件：
+  a.必须包含一个嵌套函数
+  b.嵌套函数必须引用封闭函数中定义的值（自由变量）
+  c.封闭函数必须返回嵌套函数
+
+9.性能问题：
+  Python中list，dict为可变类型，不可变类型在迭代运算时，会重新开辟空间，增加开销。
