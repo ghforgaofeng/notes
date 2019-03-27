@@ -1,0 +1,24 @@
+一.mac
+  1.压缩包版mysql的安装，eg：mysql-8.0.15-macos10.14-x86_64.tar.gz
+  
+    ！！！安装过程注意权限！！！
+    
+    解压mysql-8.0.15-macos10.14-x86_64.tar.gz
+    将解压后的目录重命名为mysql/
+    将mysql/移动到/usr/local/
+    
+    sudo chown -R root:wheel mysql/
+    cd /usr/local/mysql/
+    sudo bin/mysqld --initialize --user=mysql (该过程注意记录初始密码)
+    
+    修改初始密码：./bin/mysqladmin -u root -p password
+    
+    查询mysql-server状态：sudo support-files/mysql.server status
+    启动：sudo support-files/mysql.server start
+    停止：sudo support-files/mysql.server stop
+    重启：sudo support-files/mysql.server restart
+    
+    连接mysql-server：./bin/mysql -u root -p
+    
+二.linux
+三.windows
